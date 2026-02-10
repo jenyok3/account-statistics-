@@ -38,25 +38,25 @@ export function AccountStatsWidget({ className }: AccountStatsWidgetProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: 0.5 }}
-      className={cn("bg-transparent border border-white/5 rounded-2xl p-4 h-56 flex flex-col relative overflow-hidden max-w-md w-full", className)}
+      className={cn("bg-transparent border border-white/5 rounded-2xl p-5 h-64 flex flex-col relative overflow-hidden max-w-lg w-full", className)}
     >
-      <div className="flex items-center gap-2 mb-3">
-        <Activity className="text-[#9d00ff] w-5 h-5 shrink-0" />
-        <h3 className="text-xl font-display font-bold text-white tracking-wide">Статистика акаунтів</h3>
+      <div className="flex items-center gap-2 mb-4">
+        <Activity className="text-[#9d00ff] w-6 h-6 shrink-0" />
+        <h3 className="text-2xl font-display font-bold text-white tracking-wide">Статистика акаунтів</h3>
       </div>
       
       <div className="flex-1 flex">
         {/* Left side - Chart with center number */}
         <div className="flex-1 flex items-center justify-center relative">
-          <div className="w-full h-40 relative">
+          <div className="w-full h-48 relative">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
                   data={chartData}
                   cx="50%"
                   cy="50%"
-                  innerRadius={35}
-                  outerRadius={60}
+                  innerRadius={45}
+                  outerRadius={75}
                   paddingAngle={4}
                   dataKey="value"
                   stroke="none"
@@ -72,32 +72,32 @@ export function AccountStatsWidget({ className }: AccountStatsWidgetProps) {
             
             {/* Center number */}
             <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-              <span className="text-3xl font-bold font-mono text-white leading-none tracking-tighter">
+              <span className="text-4xl font-bold font-mono text-white leading-none tracking-tighter">
                 {stats.total}
               </span>
-              <span className="text-[10px] text-muted-foreground uppercase tracking-widest mt-1">Total</span>
+              <span className="text-[12px] text-muted-foreground uppercase tracking-widest mt-1">Total</span>
             </div>
           </div>
         </div>
         
         {/* Right side - 3 vertical cards */}
-        <div className="flex flex-col gap-1 justify-center items-center flex-1 min-w-[140px]">
+        <div className="flex flex-col gap-2 justify-center items-center flex-1 min-w-[160px]">
           {/* Total Accounts */}
-          <div className="flex items-center gap-3 py-1.5 px-4 transition-colors cursor-default group w-full justify-center">
-            <UserCheck className="text-gray-400 w-4 h-4 group-hover:text-gray-200 transition-colors" />
-            <span className="text-lg font-bold font-mono text-gray-200">{stats.total}</span>
+          <div className="flex items-center gap-4 py-2 px-5 transition-colors cursor-default group w-full justify-center">
+            <UserCheck className="text-gray-400 w-5 h-5 group-hover:text-gray-200 transition-colors" />
+            <span className="text-xl font-bold font-mono text-gray-200">{stats.total}</span>
           </div>
           
           {/* Active Accounts */}
-          <div className="flex items-center gap-3 py-1.5 px-4 transition-colors cursor-default group w-full justify-center">
-            <AppWindow className="text-green-500 w-4 h-4 group-hover:text-green-400 transition-colors" />
-            <span className="text-lg font-bold font-mono text-green-500">{stats.active}</span>
+          <div className="flex items-center gap-4 py-2 px-5 transition-colors cursor-default group w-full justify-center">
+            <AppWindow className="text-green-500 w-5 h-5 group-hover:text-green-400 transition-colors" />
+            <span className="text-xl font-bold font-mono text-green-500">{stats.active}</span>
           </div>
           
           {/* Blocked Accounts */}
-          <div className="flex items-center gap-3 py-1.5 px-4 transition-colors cursor-default group w-full justify-center">
-            <Ban className="text-red-500 w-4 h-4 group-hover:text-red-400 transition-colors" />
-            <span className="text-lg font-bold font-mono text-red-500">{stats.blocked}</span>
+          <div className="flex items-center gap-4 py-2 px-5 transition-colors cursor-default group w-full justify-center">
+            <Ban className="text-red-500 w-5 h-5 group-hover:text-red-400 transition-colors" />
+            <span className="text-xl font-bold font-mono text-red-500">{stats.blocked}</span>
           </div>
         </div>
       </div>
