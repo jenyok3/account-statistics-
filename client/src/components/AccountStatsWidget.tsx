@@ -50,13 +50,13 @@ export function AccountStatsWidget({ className }: AccountStatsWidgetProps) {
         <div className="flex-1 flex items-center justify-center relative">
           <div className="w-full h-48 relative">
             <ResponsiveContainer width="100%" height="100%">
-              <PieChart>
+              <PieChart margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
                 <Pie
                   data={chartData}
                   cx="50%"
                   cy="50%"
-                  innerRadius={45}
-                  outerRadius={75}
+                  innerRadius={40}
+                  outerRadius={70}
                   paddingAngle={4}
                   dataKey="value"
                   stroke="none"
