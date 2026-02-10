@@ -81,21 +81,21 @@ export function AccountStatsWidget({ className }: AccountStatsWidgetProps) {
         </div>
         
         {/* Right side - 3 vertical cards */}
-        <div className="flex flex-col gap-2 justify-center min-w-[140px]">
+        <div className="flex flex-col gap-1 justify-center items-center flex-1 min-w-[140px]">
           {/* Total Accounts */}
-          <div className="flex items-center gap-2 p-2.5 transition-colors cursor-default group">
+          <div className="flex items-center gap-3 py-1.5 px-4 transition-colors cursor-default group w-full justify-center">
             <UserCheck className="text-gray-400 w-4 h-4 group-hover:text-gray-200 transition-colors" />
             <span className="text-lg font-bold font-mono text-gray-200">{stats.total}</span>
           </div>
           
           {/* Active Accounts */}
-          <div className="flex items-center gap-2 p-2.5 transition-colors cursor-default group">
+          <div className="flex items-center gap-3 py-1.5 px-4 transition-colors cursor-default group w-full justify-center">
             <AppWindow className="text-green-500 w-4 h-4 group-hover:text-green-400 transition-colors" />
             <span className="text-lg font-bold font-mono text-green-500">{stats.active}</span>
           </div>
           
           {/* Blocked Accounts */}
-          <div className="flex items-center gap-2 p-2.5 transition-colors cursor-default group">
+          <div className="flex items-center gap-3 py-1.5 px-4 transition-colors cursor-default group w-full justify-center">
             <Ban className="text-red-500 w-4 h-4 group-hover:text-red-400 transition-colors" />
             <span className="text-lg font-bold font-mono text-red-500">{stats.blocked}</span>
           </div>
