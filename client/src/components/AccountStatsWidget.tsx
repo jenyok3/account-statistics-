@@ -38,7 +38,7 @@ export function AccountStatsWidget({ className }: AccountStatsWidgetProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: 0.5 }}
-      className={cn("bg-card/40 backdrop-blur-sm border border-white/5 rounded-2xl p-4 h-56 flex flex-col relative overflow-hidden max-w-md w-full", className)}
+      className={cn("bg-transparent h-56 flex flex-col relative overflow-hidden max-w-md w-full", className)}
     >
       <div className="flex items-center gap-2 mb-3">
         <Activity className="text-primary w-5 h-5 shrink-0" />
@@ -83,23 +83,20 @@ export function AccountStatsWidget({ className }: AccountStatsWidgetProps) {
         {/* Right side - 3 vertical cards */}
         <div className="flex flex-col gap-2 justify-center min-w-[140px]">
           {/* Total Accounts */}
-          <div className="flex items-center gap-3 p-2.5 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-colors cursor-default group">
+          <div className="flex items-center gap-3 p-2.5 transition-colors cursor-default group">
             <UserCheck className="text-gray-400 w-4 h-4 group-hover:text-gray-200 transition-colors" />
-            <span className="text-sm font-medium text-gray-400 group-hover:text-gray-200">Всього</span>
             <span className="text-lg font-bold font-mono text-gray-200 ml-auto">{stats.total}</span>
           </div>
           
           {/* Active Accounts */}
-          <div className="flex items-center gap-3 p-2.5 rounded-lg bg-green-500/10 border border-green-500/20 hover:bg-green-500/15 transition-colors cursor-default group">
+          <div className="flex items-center gap-3 p-2.5 transition-colors cursor-default group">
             <AppWindow className="text-green-500 w-4 h-4 group-hover:text-green-400 transition-colors" />
-            <span className="text-sm font-medium text-green-500 group-hover:text-green-400">Активні</span>
             <span className="text-lg font-bold font-mono text-green-500 ml-auto">{stats.active}</span>
           </div>
           
           {/* Blocked Accounts */}
-          <div className="flex items-center gap-3 p-2.5 rounded-lg bg-red-500/10 border border-red-500/20 hover:bg-red-500/15 transition-colors cursor-default group">
+          <div className="flex items-center gap-3 p-2.5 transition-colors cursor-default group">
             <Ban className="text-red-500 w-4 h-4 group-hover:text-red-400 transition-colors" />
-            <span className="text-sm font-medium text-red-500 group-hover:text-red-400">Блок</span>
             <span className="text-lg font-bold font-mono text-red-500 ml-auto">{stats.blocked}</span>
           </div>
         </div>

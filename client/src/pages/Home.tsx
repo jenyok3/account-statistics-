@@ -28,14 +28,6 @@ export default function Home() {
 
         <AccountStatsWidget className="shadow-2xl shadow-primary/5 hover:shadow-primary/10 transition-shadow duration-500" />
         
-        <motion.footer
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.5 }}
-          className="absolute bottom-8 text-xs text-white/20 font-mono"
-        >
-          SYSTEM_STATUS: ONLINE • v1.0.2
-        </motion.footer>
       </div>
     </div>
   );
