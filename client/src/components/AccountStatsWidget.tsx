@@ -57,9 +57,10 @@ export function AccountStatsWidget({ className }: AccountStatsWidgetProps) {
                   cy="50%"
                   innerRadius={40}
                   outerRadius={70}
-                  paddingAngle={4}
+                  paddingAngle={0}
                   dataKey="value"
-                  stroke="none"
+                  stroke="#0f172a"
+                  strokeWidth={2}
                   startAngle={90}
                   endAngle={-270}
                 >
